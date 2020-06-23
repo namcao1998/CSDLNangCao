@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3A7D4CB5-8D26-4652-A6AC-34D48D7BF54B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>demo01</RootNamespace>
+    <AssemblyName>demo01</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\ConnectState.cs" />
+    <Compile Include="DAO\DangNhapDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DTO\DangNhapDTO.cs" />
+    <Compile Include="FAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAccount.Designer.cs">
+      <DependentUpon>FAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FGroupSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FGroupSubject.Designer.cs">
+      <DependentUpon>FGroupSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMark.Designer.cs">
+      <DependentUpon>FMark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSignIn.Designer.cs">
+      <DependentUpon>FSignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FStudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FStudentInfo.Designer.cs">
+      <DependentUpon>FStudentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSubject.Designer.cs">
+      <DependentUpon>FSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FAccount.resx">
+      <DependentUpon>FAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FGroupSubject.resx">
+      <DependentUpon>FGroupSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMark.resx">
+      <DependentUpon>FMark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSignIn.resx">
+      <DependentUpon>FSignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FStudentInfo.resx">
+      <DependentUpon>FStudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSubject.resx">
+      <DependentUpon>FSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="XML\DangNhap.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
